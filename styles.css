@@ -1,0 +1,170 @@
+/* Custom styles for the Inter font and any minor overrides */
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
+    background-image: linear-gradient(to bottom right, #f8fafc, #e0e7ff); /* Subtle gradient background */
+}
+
+/* Custom SVG icons for consistency */
+.icon {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    transition: all 0.2s ease-in-out; /* Smooth transition for icons */
+}
+
+/* Active link styling */
+.nav-link.active {
+    color: #4f46e5; /* indigo-600 */
+    background-color: #eef2ff; /* indigo-50 */
+    font-weight: 600;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* subtle shadow */
+    transform: translateX(5px); /* Slight shift on active */
+}
+.nav-link:hover {
+    transform: translateX(3px); /* Slight shift on hover */
+}
+
+/* Card hover effect */
+.dashboard-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background: linear-gradient(to bottom right, #ffffff, #f0f4ff); /* Card background gradient */
+    border: 1px solid #e2e8f0; /* subtle border */
+}
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 5px 10px -5px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: linear-gradient(to bottom right, #ffffff, #f0f4ff); /* Modal background gradient */
+    padding: 2.5rem;
+    border-radius: 1.25rem; /* More rounded */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); /* Stronger shadow */
+    max-width: 90%;
+    width: 550px; /* Slightly wider */
+    position: relative;
+    transform: scale(0.9); /* Start smaller for animation */
+    opacity: 0;
+    animation: modalFadeIn 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #cbd5e1; /* Subtle border */
+}
+@keyframes modalFadeIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem; /* Larger close button */
+    cursor: pointer;
+    color: #6b7280;
+    transition: color 0.2s ease-in-out;
+}
+.close-button:hover {
+    color: #ef4444; /* Red on hover */
+}
+
+/* Map specific styling */
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 0.75rem; /* More rounded */
+    margin-top: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+/* FullCalendar styling adjustments */
+.fc .fc-button {
+    background-color: #6366f1 !important;
+    border-color: #6366f1 !important;
+    color: white !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
+    border-radius: 0.6rem !important; /* More rounded */
+    padding: 0.6rem 1.2rem !important; /* Larger padding */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.fc .fc-button:hover {
+    background-color: #4f46e5 !important;
+    border-color: #4f46e5 !important;
+    box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.15), 0 3px 6px -2px rgba(0, 0, 0, 0.08);
+}
+.fc-header-toolbar {
+    margin-bottom: 1.8rem !important; /* More spacing */
+}
+.fc-toolbar-title {
+    font-size: 1.75rem !important; /* Larger title */
+    font-weight: 700 !important;
+    color: #1f2937 !important;
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background: #aab8c9; /* Darker thumb */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #7c8b9d; /* Even darker on hover */
+}
+
+.fc-event {
+    border-radius: 0.35rem; /* Slightly more rounded */
+    padding: 0.3rem 0.6rem; /* Slightly more padding */
+    font-size: 0.9rem; /* Slightly larger text */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+.fc-event-main-frame {
+    flex-direction: column;
+}
+
+/* Style for map marker popups */
+.leaflet-popup-content-wrapper {
+    border-radius: 0.75rem !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+.leaflet-popup-content {
+    font-family: 'Inter', sans-serif;
+    padding: 0.5rem 0.75rem !important;
+}
+
+/* General button styling */
+button {
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.15), 0 3px 6px -2px rgba(0, 0, 0, 0.08);
+}
